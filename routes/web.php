@@ -1,0 +1,25 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+Route::resource('/clefs', ClefController::class);
+
+Route::get('/', 'MainController@index');
+Route::get('/getClefsData', 'ClefController@getClefsData');
+
+Route::get('/test', 'TestController@test');
+Route::get('/chtest', 'TestController@chtest');
+
+//Route::get('/pools', 'MainController@pools');
+
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes();
+});

@@ -1,0 +1,1025 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;1,100;1,200;1,300;1,500&display=swap');
+
+@import 'mixins';
+@import 'settings';
+
+
+$defaultTextColor:#333;
+
+html{
+    height: 100%;
+}
+
+body,
+html {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $defaultTitleColor;
+    padding: 0;
+    margin: 0;
+}
+
+p,
+blockquote,
+pre,
+span,
+strong,
+strong,
+sub,
+sup,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    color: $defaultTextColor;
+    padding: 0;
+    margin: 0;
+}
+
+img{
+    -webkit-user-drag: none;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+strong {
+    font-weight: bold;
+}
+
+button {
+    outline: none;
+}
+
+input , select{
+    color: #999999;
+}
+
+a {
+    color: $defaultTitleColor;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+// ::-webkit-input-placeholder { 
+//   color: #999999;
+// }
+
+// :-ms-input-placeholder { 
+//   color: #999999;
+// }
+
+// ::placeholder {
+//   color: #999999;
+// }
+
+.overlay {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.vh-centered {
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+}
+
+.v-centered {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.h-centered {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.clearfix:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.eff01 {
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
+    transition: all 0.1s ease;
+}
+
+.eff02 {
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.eff03 {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+ 
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.hidden-b{
+    overflow: hidden;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 1000009;
+    .loading-icon-wrap {
+        width: 200px;
+        text-align: center;
+        letter-spacing: 2px;
+        color: #FFF;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.inner-wrap {
+    position: relative;
+    max-width: 1360px;
+    @include calc-width('100%', '-', '32px');
+    margin: 0 auto;
+}
+
+.btn {
+    border: solid 1px transparent;
+    color: #4A1725;
+    //@include border-r(4px);
+    text-decoration: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-right: 24px;
+
+    &:last-child{
+        margin-right: 0;
+    }
+
+    &.red{
+        border: 0;
+        background: #4A1725;
+        color: #ffffff;
+    }
+
+    &.transparent{
+        background: transparent;
+        border: 1px solid #4A1725;
+        color: #4A1725;
+    }
+
+    &.silver{
+        background: #E6E6E6;
+        color: #5E5E5E;
+    }    
+    
+    &:hover , &.active{
+        background: #4A1725;
+        color: #ffffff;
+    }
+
+}
+
+.popup{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000008;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.33);
+    display: none;
+
+    &.TestLevelPopup{
+        .dialog{
+            max-width: 664px;
+            .form-box{
+                .form-box-wrap{
+                    padding: 56px 56px 100px;
+                    h2{
+                        font-size: 24px;
+                        color: #5E5E5E;
+                    }
+    
+                    ul{
+                        margin-top: 56px;
+                        display: flex;
+                        justify-content: center;
+                        li{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 150px;
+                            height: 150px;
+                            margin: 0 8px;
+                            color: #5E5E5E;
+                            font-size: 16px;
+                            font-weight: 600;
+                            list-style: none;
+                            cursor: pointer;
+    
+                            &.easy{
+                                background: #42D395;
+                            }
+                            &.medium{
+                                background: #EAD36E;
+                            }
+                            &.hard{
+                                background: #4A1725;
+                                color: #FFFFFF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .dialog {
+        display: flex;
+        align-items: center;
+        width: calc(100% - 32px);
+        min-height: calc(100% - (96px));
+        box-sizing: border-box;
+        margin: 48px auto;
+        .form-box {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            .form-box-wrap {
+                background: #fff;
+                padding: 30px;
+            }
+        }
+    }
+
+    .close-popup {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+header{
+    height: 100px;
+    box-shadow: 0px 0px 6px #00000029;
+    .inner-wrap{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        li{
+            list-style: none;
+        }
+
+        .left{
+            display: flex;
+            align-items: center;
+
+            .logo{
+                img{
+                    width: 67px;
+                }
+            }
+
+            ul{
+                display: flex;
+                li{
+                    margin-left: 60px;
+                    a{
+                        color: #707070;
+                        font-size: 16px;
+                        transition: all 0.3s ease;
+                        &:hover , .active{
+                            color: #4A1725;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right{
+            display: flex;
+            align-items: center;
+            .social{
+                ul{
+                    display: flex;
+                    li{
+                        margin-right: 24px;
+                        a{
+
+                        }
+                    }
+                }
+            }
+
+            .btn{
+                margin-left: 24px;
+            }
+        }
+    }
+}
+
+.home-page{
+    margin: 40px 0; 
+    .inner-wrap{
+        display: flex;
+        align-items: flex-start;
+        .left{
+            flex: 1;
+            .music-note{
+                padding-top: 74px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 420px;
+                background: #FBFBFB;
+                box-shadow: 0px 0px 6px #00000021;
+ 
+                .RangeInfo{
+                    flex: 1;
+                    position: relative;
+                    margin: 0 16px;
+
+                    .ClefImg{
+                        top: 60%;
+                        img{
+                            height: 160px;
+
+                            &.note2{
+                                height: 72px;
+                                margin-bottom: 28px;
+                            }
+                            &.note3{
+                                height: 100px;
+                            }
+                            &.note4{
+                                height: 100px;
+                                margin-bottom: 52px;
+                            }
+
+                        }
+                    }
+
+                    .lines{
+                        width: 100%;
+                        top: 50%;
+                        -webkit-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        position: absolute;
+                        li{
+                            width: 100%;
+                            margin-bottom: 24px;
+                            border-bottom: solid 1px #CFCFCF;
+                            list-style: none;
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                    .RangeImg{
+                        position: absolute;
+                        right: 0;
+                        width: 100%;
+                        height: 101px;
+
+
+                        .RangeLinesLeft{
+                            position: absolute;
+                            bottom: 100%;
+                            right: 44%;
+                            width: 80px;
+                            display: none;
+                            &.BottomLines{
+                                top: 100%;
+                                bottom: initial;
+                            }
+                            li{
+                                width: 100%;
+                                margin: 24px 0;
+                                list-style: none;
+                                border-bottom: solid 1px #CFCFCF;
+                            }
+                        }
+
+                        .RangeLinesRight{
+                            position: absolute;
+                            bottom: 100%;
+                            right: 10%;
+                            width: 80px;
+                            display: none;
+                            &.BottomLines{
+                                top: 100%;
+                                bottom: initial;
+                            }
+                            li{
+                                width: 100%;
+                                margin: 24px 0;
+                                list-style: none;
+                                border-bottom: solid 1px #CFCFCF;
+                            }
+                        }
+                        
+                        .img{
+                            position: absolute;
+                            top: 0;
+                            width: 80px;
+                            border-bottom: solid 1px transparent;
+                            &.img1{
+                                top: 38px;
+                                right: 44%;
+                            }
+
+                            &.img2{
+                                top: 93px;
+                                right: 10%;
+                            }
+                            img{
+                                bottom: -12px;
+                                height: 24px;
+                                background-color: whitesmoke;
+                                z-index: 1;
+                            }
+
+
+                            .overlay.top{
+                                width: 80px;
+                                height: 320px;
+                                position: absolute;
+                                top: -331px;
+                                left: 0;
+                                background:#fbfbfb;
+                                display: none;
+                            }
+
+
+                            .overlay.bottom{
+                                width: 82px;
+                                height: 320px;
+                                position: absolute;
+                                bottom: -257px;
+                                top: initial;
+                                left: 0;
+                                background: #F5F5F5;
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .item-wrap{
+                width: calc(100% + 32px);
+                margin-left: -16px;
+                margin-top: 8px;
+                display: flex;
+                flex-wrap: wrap;
+                .item{
+                    flex: 1 0 56px;
+                    height: 67px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #4A1725;
+                    font-weight: 600;
+                    margin: 24px 16px 0 16px;
+                    box-shadow: 0px 0px 6px #00000021;
+                    border-radius: 6px;
+                    background-color: #FBFBFB;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                    &:hover{
+                        background: #f5f5f5;;
+                    }
+
+                    &.disabled{
+                        background: linear-gradient(180deg, #fcb0b0, #f08080);
+                        color: rgba(0,0,0,0.5);
+                        cursor: auto;
+                        transition: all 0.3s ease;
+                    }
+
+                    &.actionable{
+                        background: linear-gradient(180deg, #70fc70, #5ce65c);
+                        color: #000000;
+                        transition: all 0.3s ease;
+                    }
+ 
+                }
+            }
+        }
+
+        .right{
+            margin-left: 32px;
+            flex: 1;
+
+            .difficultly{
+                h2{
+                    font-size: 32px;
+                    font-weight: bold;
+                    color: #4A1725;
+                }
+
+                .btn-wrap{
+                    margin-top: 24px;
+                }
+            }
+
+            .customize{
+                margin-top: 24px;
+                h2{
+                    font-size: 32px;
+                    font-weight: bold;
+                    color: #4A1725;
+                }
+
+                .customize-items{
+                    margin-top: 8px;
+                    li.item{
+                        margin-top: 16px;
+                        padding: 12px 24px;
+                        list-style: none;
+                        box-shadow: 0px 0px 6px #0000001C;
+
+                        &.open{
+                            .title {
+                                i{
+                                    transform: rotateX(180deg);
+                                }
+                            }
+                        }
+
+                        .info{
+                            display: none;
+                            margin-top: 24px;
+                            margin-bottom: 8px;
+                        }
+
+                        &.Clefs{
+                            .item-wrap{
+                                display: flex;
+                                flex-wrap: wrap;
+                                .Clefs-item{
+                                    flex: 0 0 calc(25% - 18px);
+                                    margin-right: 24px;
+                                    cursor: pointer;
+                                    &:nth-child(4n+4){
+                                        margin-right: 0;
+                                    }
+
+                                    &.active{
+                                        .inner-item{
+                                            background: #4A1725;
+                                            img{
+                                                filter: brightness(100);
+                                            }
+                                        }
+                                    }
+                                    
+                                    .inner-item{
+                                        position: relative;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        height: 128px;
+                                        background: #F5F5F5;
+                                        img{
+                                            position: relative;
+                                            z-index: 1;
+                                        }
+    
+                                        ul{
+                                            width: 100%;
+                                            top: 50%;
+                                            -webkit-transform: translateY(-50%);
+                                            transform: translateY(-50%);
+                                            position: absolute;
+                                            li{
+                                                width: 100%;
+                                                margin: 14px 0;
+                                                height: 0.5px;
+                                                background: #CFCFCF;
+                                                list-style: none;
+                                            }
+                                        }
+                                    }
+
+                                    span{
+                                        display: block;
+                                        margin-top: 16px;
+                                        font-size: 16px;
+                                        color: #5E5E5E;
+                                    }
+                                }
+                            }
+                        }
+
+
+                        &.Range{
+                            .info{
+                                margin: 14px 0 0;
+                                .item-wrap{
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    width: calc(100% + 20px);
+                                    margin-left: -10px;
+                                    .Range-item{
+                                        flex: 0 0 calc(50% - 20px);
+                                        margin: 10px;
+                                        display: none;
+                                        &.active{
+                                            display: block;
+                                        }
+                                        // &:nth-child(2n+2) {
+                                        //     margin-right: 0;
+                                        // }
+
+                                        h2{
+                                            font-size: 16px;
+                                            font-weight: bold;
+                                            color: #5E5E5E;
+                                        }
+                                        
+                                        .Range-item-text{     
+                                            overflow: hidden;
+                                            margin-top: 6px;
+                                            padding: 16px;
+                                            height: 288px;
+                                            display: flex;
+                                            flex-wrap: wrap;
+                                            background: #F5F5F5;
+
+                                        }
+
+                                        .RangeArrows{
+                                            display: flex;
+                                            flex-direction: column;
+                                            button{
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                width: 24px;
+                                                height: 24px;
+                                                margin-bottom: 4px;
+                                                padding: 0;
+                                                background: transparent;
+                                                font-size: 14px;
+                                                color: #5e5e5e;
+                                                border: 0;
+                                                transition: all 0.2s ease;
+                                                cursor: pointer;
+                                                &:hover{
+                                                    background: #4A1725;
+                                                    color: #ffffff;
+                                                }
+                                            }
+                                        }
+                                        .RangeInfo{
+                                            flex: 1;
+                                            position: relative;
+                                            margin: 0 12px;
+
+
+                                            .lines{
+                                                top: 60%;
+                                                width: 100%;
+                                                li{
+                                                    width: 100%;
+                                                    margin-bottom: 15.5px;
+                                                    border-bottom: solid 1px #CFCFCF;
+                                                    list-style: none;
+
+                                                    &:last-child{
+                                                        margin: 0;
+                                                    }
+                                                }
+                                            }
+
+                                            .RangeImg{
+                                                position: absolute;
+                                                top: 60%;
+                                                right: 0;
+                                                width: 100%;
+                                                height: 65px;
+
+
+                                                
+
+                                                .RangeLinesLeft{
+                                                    position: absolute;
+                                                    bottom: 100%;
+                                                    right: 80px;
+                                                    width: 42px;
+                                                    display: none;
+                                                    &.BottomLines{
+                                                        top: 100%;
+                                                        bottom: initial;
+                                                    }
+                                                    li{
+                                                        width: 100%;
+                                                        margin: 15px 0;
+                                                        list-style: none;
+                                                        border-bottom: solid 1px #CFCFCF;
+                                                    }
+                                                }
+
+                                                .RangeLinesRight{
+                                                    position: absolute;
+                                                    bottom: 100%;
+                                                    right: 8px;
+                                                    width: 42px;
+                                                    display: none;
+                                                    &.BottomLines{
+                                                        top: 100%;
+                                                        bottom: initial;
+                                                    }
+                                                    li{
+                                                        width: 100%;
+                                                        margin: 15px 0;
+                                                        list-style: none;
+                                                        border-bottom: solid 1px #CFCFCF;
+                                                    }
+                                                }
+
+ 
+                                                
+                                                .img{
+                                                    position: absolute;
+                                                    top: 0;
+                                                    width: 42px;
+                                                    border-bottom: solid 1px transparent;
+                                                    z-index: 1;
+                                                    &.img1{
+                                                        top: 16px;
+                                                        right: 80px;
+                                                    }
+
+                                                    &.img2{
+                                                        top: 48px;
+                                                        right: 8px;
+                                                    }
+                                                    img{
+                                                        bottom: -8px;
+                                                        height: 15px;
+                                                        background-color: whitesmoke;
+                                                    }
+
+
+                                                    .overlay.top{
+                                                        width: 48px;
+                                                        height: 206px;
+                                                        position: absolute;
+                                                        top: -212px;
+                                                        left: 0;
+                                                        background: #F5F5F5;
+                                                        display: none;
+                                                    }
+
+
+                                                    .overlay.bottom{
+                                                        width: 48px;
+                                                        height: 250px;
+                                                        position: absolute;
+                                                        bottom: -257px;
+                                                        top: initial;
+                                                        left: 0;
+                                                        background: #F5F5F5;
+                                                        display: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+
+                        &.NumberOfQuestions{
+                            .item-wrap{
+                                display: flex;
+
+                                .Number-item{
+                                    display: flex;
+                                    align-items: center;
+                                    margin-right: 24px;
+                                    padding: 6px 24px;
+                                    background: #E6E6E6;
+                                    font-size: 16px;
+                                    color: #5E5E5E;
+                                    font-weight: 600;
+
+                                    &:last-child{
+                                        margin-right: 0;
+                                    }
+
+                                    .plus_minus{
+                                        display: flex;
+                                        height: 36px;
+                                        margin-left: 12px;
+
+                                        input{
+                                            width: 40px;
+                                            border: 0;
+                                            color: #5E5E5E;
+                                            font-size: 16px;
+                                            font-weight: 600;
+                                            outline: none;
+                                            text-align: center;
+                                        }
+
+                                        .icons{
+                                            div{
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                width: 18px;
+                                                height: 18px;
+                                                font-size: 10px;
+                                                color: #FFFFFf;
+                                                background: #C5C5C5;
+                                                transition: all 0.3s ease;
+                                                cursor: pointer;
+                                                &:hover{
+                                                    background: #4A1725;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+
+                        .title{
+                            font-size: 24px;
+                            font-weight: 600;
+                            color: #5E5E5E;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            cursor: pointer;
+                            i{
+                                color: #5E5E5E;
+                                font-size: 16px;
+                                transition: all 0.3s ease;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .print-save-btn{
+                margin-top: 72px;
+            }
+        }
+    }
+}
+
+
+.worksheet{
+    margin-top: 100px;
+    .inner-wrap{
+        .item-wrap{
+            .item{
+                margin-bottom: 56px;
+                h2{
+                    font-size: 32px;
+                    color: #4A1725;
+                    font-weight: bold;
+                }
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    li{
+                        flex: 0 0 calc(25% - 24px);
+                        min-height: 194px;
+                        padding: 24px;
+                        margin-top: 32px;
+                        margin-right: 32px;
+                        list-style: none;
+                        text-align: center;
+                        box-shadow: 0px 0px 6px #0000001C;
+                        cursor: pointer;
+                        &:nth-child(4n+4){
+                            margin-right: 0;
+                        }
+                        img{
+                            width: 20px;
+                        }
+
+                        h3{
+                            margin-top: 16px;
+                            color: #5E5E5E;
+                            font-size: 24px;
+                            font-weight: 600;
+                        }
+
+                        p{
+                            margin-top: 8px;
+                            color: #5E5E5E;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.ClefImg.v-centered {
+    top: 60% !important;
+}
